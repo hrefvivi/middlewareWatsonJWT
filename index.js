@@ -3,8 +3,8 @@ const axios = require('axios')
 const jwt = require('jsonwebtoken')
 const app = express()
 
-const token = 'FBx825FppkdG67ucP-NhhJyoQLmWuo7w_gSnNnNDrHlV';
-const basicAuth = 'YXBpa2V5OkZCeDgyNUZwcGtkRzY3dWNQLU5oaEp5b1FMbVd1bzd3X2dTbk5uTkRySGxW';
+const token = '';
+const basicAuth = '';
 const baseUrl = 'https://api.us-south.assistant.watson.cloud.ibm.com/instances/bb587891-2ef1-4355-95bb-e1d61ee02cf0';
 
 app.use(express.json())
@@ -46,7 +46,7 @@ app.post('/watsonConnection',async (req, res) => {
 
         const resposta = await axios(request)
 
-        return res.status(200).json({ 'response': request.data })
+        return res.status(200).json({ 'response': resposta.data })
     } catch (err) {
         // Caso tenha erro de token errado ou algum na api, vai cair aqui
         console.log(err)
